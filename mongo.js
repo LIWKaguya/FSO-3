@@ -5,7 +5,7 @@ if(process.argv.length < 3) {
     process.exit(1)
 }
 
-const argument = process.argv;
+const argument = process.argv
 
 const password = argument[2]
 
@@ -26,13 +26,13 @@ if(argument.length > 3) {
         number: argument[4]
     })
 
-    person.save().then(result => {
+    person.save().then(() => {
         console.log(`added ${person.name} number ${person.number} to the phonebook`)
         mongoose.connection.close()
     })
 }
 else {
-    console.log(`phonebook:\n`)
+    console.log('phonebook:\n')
     Person.find({}).then(result => {
         result.forEach(person => {
             console.log(`${person.name} ${person.number}`)           
